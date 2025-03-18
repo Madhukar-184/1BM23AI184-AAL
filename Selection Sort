@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main(){
+	int num;
+	printf("Enter No. of elements:");
+	scanf("%d",&num);
+	printf("Enter %d elements",num);
+	int arr[num];
+	int i,j,index,min,temp;
+	for(i=0;i<num;i++){
+	scanf("%d",&arr[i]);
+	}
+	for(i=0;i<num;i++){
+		min=arr[i];
+		index=i;
+		for(j=i;j<num;j++){
+			if (arr[j]<min){
+			min=arr[j];
+			index=j;
+			}	
+		}
+		temp=arr[i];
+		arr[i]=min;
+		arr[index]=temp;
+		
+	}
+	for(i=0;i<num;i++){
+	printf("%d",arr[i]);
+	}
+	return 0;
+}
+
+#Output:
+Enter No. of elements:5
+Enter 5 elements: 9
+6
+2
+1
+4
+12469
