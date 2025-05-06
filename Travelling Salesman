@@ -10,8 +10,8 @@ int tsp(int dist[MAX_CITIES][MAX_CITIES], int visited[MAX_CITIES], int currPos, 
         }
         return ans;
     }
-
-    for (int city = 0; city < n; city++) {
+    int city;
+    for (city = 0; city < n; city++) {
         if (!visited[city] && dist[currPos][city] != 0) { 
             visited[city] = 1;
             ans = tsp(dist, visited, city, n, count + 1, cost + dist[currPos][city], ans);
@@ -28,8 +28,9 @@ int main() {
 
     int dist[MAX_CITIES][MAX_CITIES];
     printf("Enter the distance matrix (0 means no path between cities):\n");
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
+    int i,j;
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
             scanf("%d", &dist[i][j]);
         }
     }
